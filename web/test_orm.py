@@ -4,7 +4,7 @@ import asyncio
 
 async def test_user_save():
     await create_pool()
-    user = User(id='123', name='lzh')
+    user = User(id='123', name='liuzehua', email='test@example.com', passwd='1234567890', image='about:blank')
     await user.save()
 
 async def test_user_selectAll():
@@ -15,7 +15,7 @@ async def test_user_selectAll():
 
 async def test_user_update():
     await create_pool()
-    user = User(id='123', name='Test', email='test@example.com', passwd='1234567890', image='about:blank')
+    user = User(id='123', name='liuzehua', email='test@example.com', passwd='1234567890', image='about:blank')
     await user.update()
 
 async def test_user_remove():
@@ -24,4 +24,4 @@ async def test_user_remove():
     await user.remove()
 
 loop = asyncio.get_event_loop();
-loop.run_until_complete(test_user_update())
+loop.run_until_complete(test_user_save())
